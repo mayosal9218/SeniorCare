@@ -1,0 +1,20 @@
+name: SeniorCare
+options:
+  deploymentTarget:
+    watchOS: "10.0"
+targets:
+  SeniorCareWatch:
+    type: application.watchapp2
+    platform: watchOS
+    sources: [WatchApp, Shared]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.seniorcare.watch
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_WKApplication: YES
+        SWIFT_VERSION: 5.9
+  SeniorCareWatchTests:
+    type: bundle.unit-test
+    platform: watchOS
+    sources: [WatchAppTests]
+    dependencies: [{target: SeniorCareWatch}]
